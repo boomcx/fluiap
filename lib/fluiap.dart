@@ -17,6 +17,6 @@ class Fluiap {
       'id': id,
     };
     final Map res = await _channel.invokeMethod('purchase', args);
-    return null;
+    return res;
   }
 }

@@ -88,10 +88,10 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if(self->_handle){
-            self->_handle(type,data);
-        }        
+            self->_handle(type, data);
+        }
     });
-
+    
 }
 
 
@@ -100,13 +100,13 @@
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
     // Your application should implement these two methods.
     NSString * productIdentifier = transaction.payment.productIdentifier;
-//    NSString * receipt = [transaction.transactionReceipt base64EncodedString];
+    //    NSString * receipt = [transaction.transactionReceipt base64EncodedString];
     if ([productIdentifier length] > 0) {
         // 向自己的服务器验证购买凭证
-//        NSURLRequest *appstoreRequest = [NSURLRequest requestWithURL:[[NSBundle mainBundle] appStoreReceiptURL]];
-//        NSError *error = nil;
-//        NSData *receiptData = [NSURLConnection sendSynchronousRequest:appstoreRequest returningResponse:nil error:&error];
-//        NSString *transactionReceiptString = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+        //        NSURLRequest *appstoreRequest = [NSURLRequest requestWithURL:[[NSBundle mainBundle] appStoreReceiptURL]];
+        //        NSError *error = nil;
+        //        NSData *receiptData = [NSURLConnection sendSynchronousRequest:appstoreRequest returningResponse:nil error:&error];
+        //        NSString *transactionReceiptString = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
     }
     
     [self verifyPurchaseWithPaymentTransaction:transaction isTestServer:NO];
@@ -119,6 +119,8 @@
     }else{
         [self handleActionWithType:SIAPPurchCancle data:nil];
     }
+    
+    NSLog(@"%@", transaction.error);
     
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
@@ -234,15 +236,15 @@
     NSLog(@"------------------错误-----------------:%@", error);
 #endif
     [self handleActionWithType:SIAPPurchVerFailed data:nil];
-
+    
 }
 
 - (void)requestDidFinish:(SKRequest *)request{
 #if DEBUG
     NSLog(@"------------反馈信息结束-----------------");
 #endif
-//    [self handleActionWithType:SIAPPurchVerFailed data:nil];
-
+    //    [self handleActionWithType:SIAPPurchVerFailed data:nil];
+    
 }
 
 #pragma mark - SKPaymentTransactionObserver
