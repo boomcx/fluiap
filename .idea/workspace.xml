@@ -78,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="378" />
     <option name="y" value="23" />
     <option name="width" value="1548" />
@@ -159,9 +159,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="378" y="23" width="1548" height="1006" extended-state="1" />
+    <frame x="378" y="23" width="1548" height="1006" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.249668" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.249668" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -176,7 +176,7 @@
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" />
       <window_info anchor="bottom" id="Debug" order="5" />
-      <window_info anchor="bottom" id="Terminal" order="6" weight="0.32932165" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="6" visible="true" weight="0.32932165" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
